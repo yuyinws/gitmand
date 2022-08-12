@@ -1,0 +1,14 @@
+{
+  "extends": "@antfu",
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "rules": {
+        "curly":"off",
+        "@typescript-eslint/brace-style": "off"
+      }
+    }
+  ]
+}

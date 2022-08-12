@@ -1,0 +1,43 @@
+{
+  "name": "commande",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "keywords": [],
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "bin": {
+    "commande": "./bin/cli.mjs"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "shell-history": "^2.0.0",
+    "unbuild": "^0.8.7"
+  },
+  "devDependencies": {
+    "tsx": "^3.8.1"
+  }
+}
