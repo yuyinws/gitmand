@@ -22,9 +22,9 @@ async function main() {
 
   // write to file
   try {
-    await writeFile('history.json', JSON.stringify(json, null, 2))
+    await writeFile('gitmand.json', JSON.stringify(json, null, 2))
     // eslint-disable-next-line no-console
-    console.log('history.json written!')
+    console.log('\x1B[32m', 'gitmand.json saved!')
   } catch (error) {
     console.error(error)
   }

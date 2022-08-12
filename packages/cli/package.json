@@ -1,7 +1,7 @@
 {
-  "name": "commande",
+  "name": "gitmand",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "author": "",
   "license": "MIT",
@@ -23,7 +23,7 @@
     }
   },
   "bin": {
-    "commande": "./bin/cli.mjs"
+    "gitmand": "./bin/cli.mjs"
   },
   "files": [
     "dist",
@@ -31,13 +31,13 @@
   ],
   "scripts": {
     "build": "unbuild",
-    "start": "tsx src/index.ts"
+    "start": "tsx index.ts"
   },
   "dependencies": {
-    "shell-history": "^2.0.0",
-    "unbuild": "^0.8.7"
+    "shell-history": "^2.0.0"
   },
   "devDependencies": {
-    "tsx": "^3.8.1"
+    "tsx": "^3.8.1",
+    "unbuild": "^0.8.8"
   }
 }
