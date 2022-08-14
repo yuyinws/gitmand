@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test
-      - uses: yuyinws/gitmand@master
+        uses: yuyinws/gitmand@master
