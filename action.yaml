@@ -9,6 +9,9 @@ inputs:
     required: false
     description: 'The number of command to show(max: 20)'
     default: '10'
+  gist_id:
+    required: false
+    description: 'The gist id'
 runs:
   using: 'node16'
   main: 'packages/action/dist/index.js'

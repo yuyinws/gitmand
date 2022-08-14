@@ -11,6 +11,13 @@ jobs:
       - name: Gitmand
         id: gitmand
         uses: yuyinws/gitmand@master
+        with:
+          gist_id: ''
+
+      - name: Update gist
+        if: gitmand.input.gist_id
+        run: echo 'update gist'
+
 
       - name: Update file
         uses: "DamianReeves/write-file-action@master"
