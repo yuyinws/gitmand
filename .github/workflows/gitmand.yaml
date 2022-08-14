@@ -15,7 +15,7 @@ jobs:
           gist_id: ''
 
       - name: Update gist
-        if: setps.gitmand.input.gist_id
+        if: steps.gitmand.input.gist_id
         run: echo 'update gist'
 
 
