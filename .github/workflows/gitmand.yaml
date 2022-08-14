@@ -12,7 +12,7 @@ jobs:
         id: gitmand
         uses: yuyinws/gitmand@master
         with:
-          gist_id: ''
+          gist_id: '3123213'
 
       - name: Update gist
         if: steps.gitmand.input.gist_id
