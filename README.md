@@ -6,11 +6,11 @@
 
 ![Snipaste_2022-08-14_21-24-53.png](https://s2.loli.net/2022/08/14/HzGWFiNQ6UYPIhB.png)
 
-## workflow overview
+## Workflow Overview
 ![Snipaste_2022-08-14_21-22-06.png](https://s2.loli.net/2022/08/14/uUypvMAVxwDscBI.png)
 
 ## Usage
-1. download cli
+1. Download Cli
 ```
 $ npm install -g gitmand
 ```
@@ -21,7 +21,7 @@ $ gitmand
 ```
 It will generate a file named `gitmand.json`, which includes your command data. You should push this to a GitHub Repo.
 
-3. config `GitHub Actions`  
+3. Config `GitHub Actions`  
 See [action.yaml](https://github.com/yuyinws/gitmand/blob/master/action.yaml)
 ```yaml
 # gitmand.yaml
