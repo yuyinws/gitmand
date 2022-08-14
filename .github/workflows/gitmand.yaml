@@ -17,7 +17,7 @@ jobs:
         with:
           path: gitmand.svg
           write-mode: overwrite
-          contents: ${{ setps.gitmand.outputs.svg }}
+          contents: ${{ steps.gitmand.outputs.svg }}
 
       - name: Commit file
         run: |
