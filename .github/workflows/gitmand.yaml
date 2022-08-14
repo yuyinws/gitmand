@@ -11,12 +11,14 @@ jobs:
       - name: Gitmand
         id: gitmand
         uses: yuyinws/gitmand@master
-        with:
-          gist_id: '3123213'
 
       - name: Update gist
-        if: steps.gitmand.input.gist_id
-        run: echo 'update gist'
+        uses: exuanbo/actions-deploy-gist@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          gist_id: 188a565632cab85451b3765256f43a49
+          file_path: gitmand.json
+          file_type: text
 
 
       - name: Update file
