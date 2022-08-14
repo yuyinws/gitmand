@@ -10,6 +10,9 @@
     "start": "tsx src/index.ts",
     "build": "ncc build src/index.ts"
   },
+  "dependencies": {
+    "@actions/core": "^1.9.1"
+  },
   "devDependencies": {
     "@zeit/ncc": "^0.22.3",
     "tsx": "^3.8.1"

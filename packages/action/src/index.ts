@@ -1,11 +1,12 @@
 import { readFile } from 'fs/promises'
+import * as core from '@actions/core'
 
 async function main() {
   try {
     const content = await readFile('gitmand.json', 'utf8')
-    console.log('🚀 ~ file: index.ts ~ line 6 ~ main ~ content', content)
+    core.info(content)
   } catch (error) {
-    console.log('🚀 ~ file: index.ts ~ line 8 ~ main ~ error', error)
+    core.error(`🚀 ~ file: index.ts ~ line 8 ~ main ~ error + ${error}`)
   }
 }
 
