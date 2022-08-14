@@ -570,6 +570,11 @@ function render(lists) {
 async function main() {
     try {
         const LIMIT = Object(core.getInput)('limit', { required: false });
+        const GIST_ID = Object(core.getInput)('gist-id', { required: false });
+        if (GIST_ID) {
+            Object(promises_.writeFile)('./gist.txt', '123456');
+            Object(core.setOutput)('gist_id', GIST_ID);
+        }
         let limit = parseInt(LIMIT) || 10;
         limit = Math.max(limit, 5);
         limit = Math.min(limit, 20);

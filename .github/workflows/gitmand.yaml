@@ -11,13 +11,15 @@ jobs:
       - name: Gitmand
         id: gitmand
         uses: yuyinws/gitmand@master
+        with:
+          gist_id: 188a565632cab85451b3765256f43a49
 
       - name: Update gist
         uses: exuanbo/actions-deploy-gist@main
         with:
           token: ${{ secrets.GIST_TOKEN }}
-          gist_id: 188a565632cab85451b3765256f43a49
-          file_path: gitmand.json
+          gist_id: ${{ steps.gitmand.outputs.gist_id }}
+          file_path: gist.txt
           file_type: text
 
 
