@@ -1,8 +1,8 @@
-<svg width="450" height="400" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<svg width="450" height="280" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
   <style>
     .foreign{
         width: 450px;
-        height: 400px;
+        height: 280px;
         border-radius: 7px;
       }
 
@@ -50,7 +50,7 @@
 
     .window {
       background: rgba(0,0,0,0.8);
-      height: 375px;
+      height: 255px;
       padding: 5px 10px;
     }
 
