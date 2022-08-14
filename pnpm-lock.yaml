@@ -18,8 +18,10 @@ importers:
   packages/action:
     specifiers:
       '@zeit/ncc': ^0.22.3
+      tsx: ^3.8.1
     devDependencies:
       '@zeit/ncc': 0.22.3
+      tsx: 3.8.1
 
   packages/cli:
     specifiers:
