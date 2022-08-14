@@ -31,7 +31,8 @@
   ],
   "scripts": {
     "build": "unbuild",
-    "start": "tsx index.ts"
+    "start": "tsx index.ts",
+    "publish": "npm run build && npm publish"
   },
   "dependencies": {
     "shell-history": "^2.0.0"
