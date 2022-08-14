@@ -40,7 +40,7 @@ module.exports =
 /******/ 	// the startup function
 /******/ 	function startup() {
 /******/ 		// Load entry module and return exports
-/******/ 		return __webpack_require__(205);
+/******/ 		return __webpack_require__(724);
 /******/ 	};
 /******/ 	// initialize runtime
 /******/ 	runtime(__webpack_require__);
@@ -423,172 +423,6 @@ function _default(name, version, hashfunc) {
   generateUUID.URL = URL;
   return generateUUID;
 }
-
-/***/ }),
-
-/***/ 205:
-/***/ (function(__unusedmodule, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: external "fs/promises"
-var promises_ = __webpack_require__(225);
-
-// EXTERNAL MODULE: /Users/yuyin/i/gitmand/node_modules/.pnpm/@actions+core@1.9.1/node_modules/@actions/core/lib/core.js
-var core = __webpack_require__(908);
-
-// CONCATENATED MODULE: ./src/render.ts
-function render(lists) {
-    let commandSvg = '';
-    lists.forEach((list, index) => {
-        commandSvg
-            += `<div class="item">
-      <div class="index">${index + 1}</div>
-      <div class="percent">${list.count}(${list.percent})</div>
-      <div class="text">${list.command}</div>
-    </div>`;
-    });
-    return `
-  <svg width="450" height="400" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .foreign{
-        width: 450px;
-        height: 400px;
-        border-radius: 7px;
-      }
-
-    .terminal {
-      color: #c7c7c7;
-      font-family: 'input mono', sans-serif;
-      font-size:12px;
-    }
-
-    .menuBar {
-      width: 100%;
-      height: 25px;
-      background: rgba(0,0,0);
-    }
-
-    .left {
-      width: 50%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      margin-left:10px;
-      gap:5px;
-    }
-
-    .close {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #ed6a5d;
-    }
-
-    .minimize {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #f4bf4f;
-    }
-
-    .fullscreen {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #61c554;
-    }
-
-    .window {
-      background: rgba(0,0,0,0.8);
-      height: 375px;
-      padding: 5px 10px;
-    }
-
-    .command {
-      display:flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .dot {
-     color: #89f178;
-    }
-
-    .text {
-      color: #57c038;
-    }
-
-    .list {
-      display: flex;
-      flex-direction: column;
-      margin-top: 5px;
-    }
-
-    .item {
-      display: flex;
-    }
-
-    .index {
-      flex-basis: 10%;
-    }
-
-    .percent {
-      flex-basis: 28%;
-    }
-  </style>
-  
-  <foreignObject class="foreign">
-    <div class="terminal" xmlns="http://www.w3.org/1999/xhtml">
-      <div class="menuBar">
-        <div class="left">
-          <div class="close"></div>
-          <div class="minimize"></div>
-          <div class="fullscreen"></div>
-        </div>
-      </div>
-      <div class="window">
-        <div class="command">
-          <div class="dot">➜</div>
-          <div class="text">gitmand</div>
-        </div>
-        <div class="list">
-          ${commandSvg}
-        </div>
-      </div>
-    </div>
-  </foreignObject>
-</svg>
-  `;
-}
-
-// CONCATENATED MODULE: ./src/index.ts
-
-
-
-async function main() {
-    try {
-        const LIMIT = Object(core.getInput)('limit', { required: false });
-        const GIST_ID = Object(core.getInput)('gist_id', { required: false });
-        if (GIST_ID) {
-            Object(promises_.writeFile)('./gist.txt', '123456');
-            Object(core.setOutput)('gist_id', GIST_ID);
-        }
-        let limit = parseInt(LIMIT) || 10;
-        limit = Math.max(limit, 5);
-        limit = Math.min(limit, 20);
-        const content = await Object(promises_.readFile)('gitmand.json', 'utf8');
-        let lists = JSON.parse(content);
-        lists = lists.slice(0, limit);
-        Object(core.setOutput)('svg', render(lists));
-    }
-    catch (error) {
-        Object(core.error)(`${error}`);
-    }
-}
-main();
-
 
 /***/ }),
 
@@ -1706,6 +1540,183 @@ class HttpClient {
 exports.HttpClient = HttpClient;
 const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCase()] = obj[k]), c), {});
 //# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 724:
+/***/ (function(__unusedmodule, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: external "fs/promises"
+var promises_ = __webpack_require__(225);
+
+// EXTERNAL MODULE: /Users/yuyin/i/gitmand/node_modules/.pnpm/@actions+core@1.9.1/node_modules/@actions/core/lib/core.js
+var core = __webpack_require__(908);
+
+// CONCATENATED MODULE: ./src/render.ts
+function render(lists) {
+    let commandSvg = '';
+    lists.forEach((list, index) => {
+        commandSvg
+            += `<div class="item">
+      <div class="index">${index + 1}</div>
+      <div class="percent">${list.count}(${list.percent})</div>
+      <div class="text">${list.command}</div>
+    </div>`;
+    });
+    return `
+  <svg width="450" height="400" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .foreign{
+        width: 450px;
+        height: 400px;
+        border-radius: 7px;
+      }
+
+    .terminal {
+      color: #c7c7c7;
+      font-family: 'input mono', sans-serif;
+      font-size:12px;
+    }
+
+    .menuBar {
+      width: 100%;
+      height: 25px;
+      background: rgba(0,0,0);
+    }
+
+    .left {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      margin-left:10px;
+      gap:5px;
+    }
+
+    .close {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ed6a5d;
+    }
+
+    .minimize {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #f4bf4f;
+    }
+
+    .fullscreen {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #61c554;
+    }
+
+    .window {
+      background: rgba(0,0,0,0.8);
+      height: 375px;
+      padding: 5px 10px;
+    }
+
+    .command {
+      display:flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dot {
+     color: #89f178;
+    }
+
+    .text {
+      color: #57c038;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      margin-top: 5px;
+    }
+
+    .item {
+      display: flex;
+    }
+
+    .index {
+      flex-basis: 10%;
+    }
+
+    .percent {
+      flex-basis: 28%;
+    }
+  </style>
+  
+  <foreignObject class="foreign">
+    <div class="terminal" xmlns="http://www.w3.org/1999/xhtml">
+      <div class="menuBar">
+        <div class="left">
+          <div class="close"></div>
+          <div class="minimize"></div>
+          <div class="fullscreen"></div>
+        </div>
+      </div>
+      <div class="window">
+        <div class="command">
+          <div class="dot">➜</div>
+          <div class="text">gitmand</div>
+        </div>
+        <div class="list">
+          ${commandSvg}
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
+  `;
+}
+
+// CONCATENATED MODULE: ./src/createGist.ts
+function createGist(lists) {
+    let gistText = '';
+    lists.forEach((list) => {
+        gistText += `${list.command.padEnd(10)}${list.count} (${list.percent})\n`;
+    });
+    return gistText;
+}
+
+// CONCATENATED MODULE: ./src/index.ts
+
+
+
+
+async function main() {
+    try {
+        const LIMIT = Object(core.getInput)('limit', { required: false });
+        const GIST_ID = Object(core.getInput)('gist_id', { required: false });
+        let limit = parseInt(LIMIT) || 10;
+        limit = Math.max(limit, 5);
+        limit = Math.min(limit, 20);
+        const content = await Object(promises_.readFile)('gitmand.json', 'utf8');
+        let lists = JSON.parse(content);
+        lists = lists.slice(0, limit);
+        Object(core.setOutput)('svg', render(lists));
+        if (GIST_ID) {
+            const gistText = createGist(lists);
+            await Object(promises_.writeFile)('gist.txt', gistText, 'utf8');
+            Object(core.setOutput)('gist_id', GIST_ID);
+        }
+    }
+    catch (error) {
+        Object(core.error)(`${error}`);
+    }
+}
+main();
+
 
 /***/ }),
 

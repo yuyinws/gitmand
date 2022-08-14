@@ -2,16 +2,12 @@ import { readFile, writeFile } from 'fs/promises'
 import * as core from '@actions/core'
 import type { List } from './render'
 import { render } from './render'
+import { createGist } from './createGist'
 
 async function main() {
   try {
     const LIMIT: string = core.getInput('limit', { required: false })
     const GIST_ID: string = core.getInput('gist_id', { required: false })
-
-    if (GIST_ID) {
-      writeFile('./gist.txt', '123456')
-      core.setOutput('gist_id', GIST_ID)
-    }
 
     let limit: number = parseInt(LIMIT) || 10
     limit = Math.max(limit, 5)
@@ -20,6 +16,12 @@ async function main() {
     let lists: List[] = JSON.parse(content)
     lists = lists.slice(0, limit)
     core.setOutput('svg', render(lists))
+
+    if (GIST_ID) {
+      const gistText = createGist(lists)
+      await writeFile('gist.txt', gistText, 'utf8')
+      core.setOutput('gist_id', GIST_ID)
+    }
   } catch (error) {
     core.error(`${error}`)
   }
