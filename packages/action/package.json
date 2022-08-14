@@ -1,20 +1,15 @@
 {
-  "name": "gitmand-monorepo",
+  "name": "gitmand-action",
   "version": "1.0.0",
   "description": "",
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "keywords": [],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "typescript": "^4.7.4"
-  },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.26.1",
-    "@types/node": "^18.7.1",
-    "eslint": "^8.21.0"
+    "@zeit/ncc": "^0.22.3"
   }
 }

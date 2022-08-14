@@ -1,0 +1,9 @@
+name: keylol action
+on: push
+
+jobs:
+  gitmand:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+      - uses: yuyinws/gitmand@master

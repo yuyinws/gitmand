@@ -1,0 +1,6 @@
+name: 'Gitmand Action'
+description: 'xx'
+author: 'yuyinws'
+runs:
+  using: 'node16'
+  main: 'packages/action/dist/index.js'
