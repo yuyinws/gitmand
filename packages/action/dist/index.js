@@ -1558,6 +1558,7 @@ var core = __webpack_require__(908);
 // CONCATENATED MODULE: ./src/render.ts
 function render(lists) {
     let commandSvg = '';
+    const length = lists.length;
     lists.forEach((list, index) => {
         commandSvg
             += `<div class="item">
@@ -1567,11 +1568,11 @@ function render(lists) {
     </div>`;
     });
     return `
-  <svg width="450" height="400" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <svg width="450" height="${70 + length * 14}" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
   <style>
     .foreign{
         width: 450px;
-        height: 400px;
+        height: ${70 + length * 14}px;
         border-radius: 7px;
       }
 
@@ -1619,7 +1620,7 @@ function render(lists) {
 
     .window {
       background: rgba(0,0,0,0.8);
-      height: 375px;
+      height: ${70 + length * 14 - 25}px;
       padding: 5px 10px;
     }
 
