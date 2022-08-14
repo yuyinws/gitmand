@@ -1,6 +1,14 @@
 name: 'Gitmand Action'
 description: 'xx'
 author: 'yuyinws'
+branding:
+  icon: arrow-right-circle
+  color: blue
+inputs:
+  limit:
+    required: false
+    description: 'The number of command to show(max: 20)'
+    default: '10'
 runs:
   using: 'node16'
   main: 'packages/action/dist/index.js'

@@ -1,2 +1,3 @@
 node_modules
 packages/cli/dist
+.DS_Store

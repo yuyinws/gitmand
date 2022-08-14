@@ -1,4 +1,4 @@
-name: keylol action
+name: gitmand action
 on: push
 
 jobs:

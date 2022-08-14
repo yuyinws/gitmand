@@ -40,7 +40,7 @@ module.exports =
 /******/ 	// the startup function
 /******/ 	function startup() {
 /******/ 		// Load entry module and return exports
-/******/ 		return __webpack_require__(354);
+/******/ 		return __webpack_require__(205);
 /******/ 	};
 /******/ 	// initialize runtime
 /******/ 	runtime(__webpack_require__);
@@ -426,6 +426,160 @@ function _default(name, version, hashfunc) {
 
 /***/ }),
 
+/***/ 205:
+/***/ (function(__unusedmodule, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: external "fs/promises"
+var promises_ = __webpack_require__(225);
+
+// EXTERNAL MODULE: /Users/yuyin/i/gitmand/node_modules/.pnpm/@actions+core@1.9.1/node_modules/@actions/core/lib/core.js
+var core = __webpack_require__(908);
+
+// CONCATENATED MODULE: ./src/render.ts
+function render(lists) {
+    let commandSvg = '';
+    lists.forEach((list, index) => {
+        commandSvg
+            += `<div class="item">
+      <div>${index + 1}</div>
+      <div>${list.count}</div>
+      <div>${list.command}</div>
+    </div>`;
+    });
+    return `
+  <svg width="450" height="400" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .foreign{
+        width: 450px;
+        height: 400px;
+        border-radius: 7px;
+      }
+
+    .terminal {
+      color: #c7c7c7;
+      font-family: 'input mono', sans-serif;
+      font-size:12px;
+    }
+
+    .menuBar {
+      width: 100%;
+      height: 25px;
+      background: rgba(0,0,0);
+    }
+
+    .left {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      margin-left:10px;
+      gap:5px;
+    }
+
+    .close {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ed6a5d;
+    }
+
+    .minimize {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #f4bf4f;
+    }
+
+    .fullscreen {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #61c554;
+    }
+
+    .window {
+      background: rgba(0,0,0,0.8);
+      height: 375px;
+      padding: 5px 10px;
+    }
+
+    .command {
+      display:flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dot {
+     color: #89f178;
+    }
+
+    .text {
+      color: #57c038;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      margin-top: 5px;
+    }
+
+    .item {
+      display: flex;
+      gap: 10px;
+    }
+  </style>
+  
+  <foreignObject class="foreign">
+    <div class="terminal" xmlns="http://www.w3.org/1999/xhtml">
+      <div class="menuBar">
+        <div class="left">
+          <div class="close"></div>
+          <div class="minimize"></div>
+          <div class="fullscreen"></div>
+        </div>
+      </div>
+      <div class="window">
+        <div class="command">
+          <div class="dot">➜</div>
+          <div class="text">gitmand</div>
+        </div>
+        <div class="list">
+          ${commandSvg}
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
+  `;
+}
+
+// CONCATENATED MODULE: ./src/index.ts
+
+
+
+async function main() {
+    try {
+        const LIMIT = Object(core.getInput)('limit', { required: false });
+        let limit = parseInt(LIMIT) || 10;
+        limit = Math.max(limit, 5);
+        limit = Math.min(limit, 20);
+        const content = await Object(promises_.readFile)('gitmand.json', 'utf8');
+        let lists = JSON.parse(content);
+        lists = lists.slice(0, limit);
+        Object(core.setOutput)('svg', render(lists));
+    }
+    catch (error) {
+        Object(core.error)(`${error}`);
+    }
+}
+main();
+
+
+/***/ }),
+
 /***/ 211:
 /***/ (function(module) {
 
@@ -523,38 +677,6 @@ function toCommandProperties(annotationProperties) {
 }
 exports.toCommandProperties = toCommandProperties;
 //# sourceMappingURL=utils.js.map
-
-/***/ }),
-
-/***/ 354:
-/***/ (function(__unusedmodule, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var fs_promises__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(225);
-/* harmony import */ var fs_promises__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(fs_promises__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(908);
-/* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_actions_core__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const svg = `<svg width="501" height="500" viewBox="0 0 501 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="250.412" cy="250" rx="249.56" ry="250" fill="black"/>
-<path d="M190.275 170.253C190.66 169.586 191.623 169.586 192.008 170.253L298.34 354.751C298.724 355.417 298.243 356.25 297.474 356.25H84.8094C84.0399 356.25 83.5588 355.417 83.943 354.751L190.275 170.253Z" fill="white"/>
-<path d="M223.201 162.878C222.817 162.211 223.297 161.378 224.066 161.378L436.73 161.378C437.5 161.378 437.981 162.212 437.597 162.879L331.264 347.377C330.88 348.044 329.918 348.043 329.533 347.376L223.201 162.878Z" fill="white"/>
-</svg>
-`;
-async function main() {
-    try {
-        const content = await Object(fs_promises__WEBPACK_IMPORTED_MODULE_0__.readFile)('gitmand.json', 'utf8');
-        _actions_core__WEBPACK_IMPORTED_MODULE_1__.info(content);
-        _actions_core__WEBPACK_IMPORTED_MODULE_1__.setOutput('svg', svg);
-    }
-    catch (error) {
-        _actions_core__WEBPACK_IMPORTED_MODULE_1__.error(`🚀 ~ file: index.ts ~ line 8 ~ main ~ error + ${error}`);
-    }
-}
-main();
-
 
 /***/ }),
 
@@ -2854,6 +2976,36 @@ exports.debug = debug; // for test
 /******/ 		};
 /******/ 	}();
 /******/ 	
+/******/ 	/* webpack/runtime/define property getter */
+/******/ 	!function() {
+/******/ 		// define getter function for harmony exports
+/******/ 		var hasOwnProperty = Object.prototype.hasOwnProperty;
+/******/ 		__webpack_require__.d = function(exports, name, getter) {
+/******/ 			if(!hasOwnProperty.call(exports, name)) {
+/******/ 				Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	!function() {
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 			if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 			return ns;
+/******/ 		};
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	!function() {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -2863,17 +3015,6 @@ exports.debug = debug; // for test
 /******/ 				function getModuleExports() { return module; };
 /******/ 			__webpack_require__.d(getter, 'a', getter);
 /******/ 			return getter;
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getter */
-/******/ 	!function() {
-/******/ 		// define getter function for harmony exports
-/******/ 		var hasOwnProperty = Object.prototype.hasOwnProperty;
-/******/ 		__webpack_require__.d = function(exports, name, getter) {
-/******/ 			if(!hasOwnProperty.call(exports, name)) {
-/******/ 				Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 			}
 /******/ 		};
 /******/ 	}();
 /******/ 	
