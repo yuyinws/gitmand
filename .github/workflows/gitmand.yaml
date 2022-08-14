@@ -8,23 +8,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v1
 
-      - name: test
+      - name: Gitmand
+        id: gitmand
         uses: yuyinws/gitmand@master
 
-      - name: Overwrite file
+      - name: Update file
         uses: "DamianReeves/write-file-action@master"
         with:
-          path: just-test.js
+          path: gitmand.svg
           write-mode: overwrite
-          contents: |
-            console.log('some contents')
+          contents: ${setps.gitmand.outputs.svg}
 
-      - name: Commit files
+      - name: Commit file
         run: |
-          git add just-test.js
+          git add gitmand.svg
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -m "Add changes" -a
+          git commit -m "update gitmand.svg [Skip GitHub Action]" -a
 
       - name: Push changes
         uses: ad-m/github-push-action@master
