@@ -1,4 +1,4 @@
-import { readFile } from 'fs/promises'
+import { readFile, writeFile } from 'fs/promises'
 import * as core from '@actions/core'
 import type { List } from './render'
 import { render } from './render'
@@ -12,6 +12,7 @@ async function main() {
     const content = await readFile('gitmand.json', 'utf8')
     let lists: List[] = JSON.parse(content)
     lists = lists.slice(0, limit)
+    writeFile('test.svg', render(lists), 'utf8')
     core.setOutput('svg', render(lists))
   } catch (error) {
     core.error(`${error}`)

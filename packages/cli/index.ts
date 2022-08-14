@@ -3,7 +3,9 @@ import { shellHistory } from 'shell-history'
 
 async function main() {
   const historyMap = new Map<string, number>([])
-  shellHistory().forEach((item) => {
+  const historyList = shellHistory()
+  const total = historyList.length
+  historyList.forEach((item) => {
     const command = item.split(' ')[0]
     if (!historyMap.has(command)) {
       historyMap.set(command, 1)
@@ -18,8 +20,8 @@ async function main() {
   const json = sorted.map(([command, count]) => ({
     command,
     count,
+    percent: `${(count / total * 100).toFixed(2)}%`,
   }))
-
   // write to file
   try {
     await writeFile('gitmand.json', JSON.stringify(json, null, 2))

@@ -1,6 +1,7 @@
 export interface List {
   command: string
   count: number
+  percent: string
 }
 
 export function render(lists: List[]) {
@@ -9,9 +10,9 @@ export function render(lists: List[]) {
   lists.forEach((list, index) => {
     commandSvg
     += `<div class="item">
-      <div>${index + 1}</div>
-      <div>${list.count}</div>
-      <div>${list.command}</div>
+      <div class="index">${index + 1}</div>
+      <div class="percent">${list.count}(${list.percent})</div>
+      <div class="text">${list.command}</div>
     </div>`
   })
 
@@ -94,7 +95,14 @@ export function render(lists: List[]) {
 
     .item {
       display: flex;
-      gap: 10px;
+    }
+
+    .index {
+      flex-basis: 10%;
+    }
+
+    .percent {
+      flex-basis: 28%;
     }
   </style>
   
