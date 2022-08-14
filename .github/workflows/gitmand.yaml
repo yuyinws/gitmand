@@ -15,7 +15,7 @@ jobs:
           gist_id: ''
 
       - name: Update gist
-        if: ${{ gitmand.input.gist_id }}
+        if: setps.gitmand.input.gist_id
         run: echo 'update gist'
 
 
