@@ -444,9 +444,9 @@ function render(lists) {
     lists.forEach((list, index) => {
         commandSvg
             += `<div class="item">
-      <div>${index + 1}</div>
-      <div>${list.count}</div>
-      <div>${list.command}</div>
+      <div class="index">${index + 1}</div>
+      <div class="percent">${list.count}(${list.percent})</div>
+      <div class="text">${list.command}</div>
     </div>`;
     });
     return `
@@ -528,7 +528,14 @@ function render(lists) {
 
     .item {
       display: flex;
-      gap: 10px;
+    }
+
+    .index {
+      flex-basis: 10%;
+    }
+
+    .percent {
+      flex-basis: 28%;
     }
   </style>
   
