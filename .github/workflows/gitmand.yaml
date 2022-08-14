@@ -11,6 +11,8 @@ jobs:
       - name: Gitmand
         id: gitmand
         uses: yuyinws/gitmand@master
+        with:
+          gist_id: 188a565632cab85451b3765256f43a49
 
       - name: Update gist
         if: steps.gitmand.outputs.gist_id
