@@ -76,7 +76,14 @@
 
     .item {
       display: flex;
-      gap: 10px;
+    }
+
+    .index {
+      flex-basis: 10%;
+    }
+
+    .percent {
+      flex-basis: 28%;
     }
   </style>
   
@@ -96,45 +103,45 @@
         </div>
         <div class="list">
           <div class="item">
-      <div>1</div>
-      <div>392</div>
-      <div>ls</div>
+      <div class="index">1</div>
+      <div class="percent">392(15.34%)</div>
+      <div class="text">ls</div>
     </div><div class="item">
-      <div>2</div>
-      <div>376</div>
-      <div>cd</div>
+      <div class="index">2</div>
+      <div class="percent">376(14.72%)</div>
+      <div class="text">cd</div>
     </div><div class="item">
-      <div>3</div>
-      <div>193</div>
-      <div>git</div>
+      <div class="index">3</div>
+      <div class="percent">193(7.55%)</div>
+      <div class="text">git</div>
     </div><div class="item">
-      <div>4</div>
-      <div>180</div>
-      <div>d</div>
+      <div class="index">4</div>
+      <div class="percent">180(7.05%)</div>
+      <div class="text">d</div>
     </div><div class="item">
-      <div>5</div>
-      <div>146</div>
-      <div>gc</div>
+      <div class="index">5</div>
+      <div class="percent">146(5.71%)</div>
+      <div class="text">gc</div>
     </div><div class="item">
-      <div>6</div>
-      <div>145</div>
-      <div>code</div>
+      <div class="index">6</div>
+      <div class="percent">145(5.68%)</div>
+      <div class="text">code</div>
     </div><div class="item">
-      <div>7</div>
-      <div>113</div>
-      <div>w</div>
+      <div class="index">7</div>
+      <div class="percent">113(4.42%)</div>
+      <div class="text">w</div>
     </div><div class="item">
-      <div>8</div>
-      <div>92</div>
-      <div>ni</div>
+      <div class="index">8</div>
+      <div class="percent">92(3.60%)</div>
+      <div class="text">ni</div>
     </div><div class="item">
-      <div>9</div>
-      <div>62</div>
-      <div>c</div>
+      <div class="index">9</div>
+      <div class="percent">62(2.43%)</div>
+      <div class="text">c</div>
     </div><div class="item">
-      <div>10</div>
-      <div>62</div>
-      <div>rm</div>
+      <div class="index">10</div>
+      <div class="percent">62(2.43%)</div>
+      <div class="text">rm</div>
     </div>
         </div>
       </div>
