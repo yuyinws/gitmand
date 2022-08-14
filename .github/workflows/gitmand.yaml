@@ -20,7 +20,7 @@ jobs:
         with:
           token: ${{ secrets.GIST_TOKEN }}
           gist_id: ${{ steps.gitmand.outputs.gist_id }}
-          file_path: gist.txt
+          file_path: Gitmand
           file_type: text
 
 

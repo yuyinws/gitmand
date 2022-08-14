@@ -19,7 +19,7 @@ async function main() {
 
     if (GIST_ID) {
       const gistText = createGist(lists)
-      await writeFile('gist.txt', gistText, 'utf8')
+      await writeFile('Gitmand', gistText, 'utf8')
       core.setOutput('gist_id', GIST_ID)
     }
   } catch (error) {

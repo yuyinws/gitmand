@@ -1707,7 +1707,7 @@ async function main() {
         Object(core.setOutput)('svg', render(lists));
         if (GIST_ID) {
             const gistText = createGist(lists);
-            await Object(promises_.writeFile)('gist.txt', gistText, 'utf8');
+            await Object(promises_.writeFile)('Gitmand', gistText, 'utf8');
             Object(core.setOutput)('gist_id', GIST_ID);
         }
     }
