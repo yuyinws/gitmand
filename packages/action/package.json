@@ -7,7 +7,8 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "start": "tsx src/index.ts"
+    "start": "tsx src/index.ts",
+    "build": "ncc build src/index.ts"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.22.3",
