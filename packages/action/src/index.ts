@@ -6,7 +6,7 @@ import { render } from './render'
 async function main() {
   try {
     const LIMIT: string = core.getInput('limit', { required: false })
-    const GIST_ID: string = core.getInput('gist-id', { required: false })
+    const GIST_ID: string = core.getInput('gist_id', { required: false })
 
     if (GIST_ID) {
       writeFile('./gist.txt', '123456')
