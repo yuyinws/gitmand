@@ -34,7 +34,7 @@ jobs:
 
       - name: Commit file
         run: |
-          git add gitmand.svg
+          git add .
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -m "update gitmand.svg [skip ci]" -a
