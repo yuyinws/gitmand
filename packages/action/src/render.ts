@@ -27,7 +27,7 @@ export function render(lists: List[]) {
 
     .terminal {
       color: #c7c7c7;
-      font-family: 'input mono', sans-serif;
+      font-family: "DM Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
       font-size:12px;
     }
 
