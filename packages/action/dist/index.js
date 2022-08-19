@@ -1578,7 +1578,7 @@ function render(lists) {
 
     .terminal {
       color: #c7c7c7;
-      font-family: "DM Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      font-family: "DM Mono","input mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
       font-size:12px;
     }
 
